@@ -1,30 +1,5 @@
-<div>
+<div class="container mx-auto px-4 py-6">
+    <h2 class="text-2xl font-semibold mb-4 text-center">League Schehdule</h2>
 
-    <h2>League Schehdule</h2>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Date/Time</th>
-                <th>Stadium</th>
-                <th>Home Team</th>
-                <th>Result</th>
-                <th>Away Team</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr *ngFor="let match of matches">
-                <td>{{ match.matchDate | date: 'dd.MM.yyyy HH:mm' }}</td>
-                <td>{{ match.stadium }}</td>
-                <td>{{ match.homeTeam }}</td>
-                <td>
-                    {{ match.matchPlayed ? match.homeTeamScore + ' : ' + match.awayTeamScore : '- : -' }}
-                </td>
-                <td>{{ match.awayTeam }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-
+    <ng-table [rowData]="matches" [columnDefs]="columnDefs"></ng-table>
 </div>
