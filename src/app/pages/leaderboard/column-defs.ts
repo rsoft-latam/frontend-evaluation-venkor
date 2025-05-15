@@ -32,7 +32,7 @@ export const LEADERBOARD_COLUMN_DEFS: IColumnDefs[] = [
     getValue: (row: ITeamStats) => {
       return String(row.goalsFor - row.goalsAgainst);
     },
-    responsiveClasses: 'text-center block md:hidden',
+    responsiveClasses: 'text-center table-cell md:hidden',
   },
   {
     headerName: 'Points',
