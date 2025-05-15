@@ -87,8 +87,10 @@ export class LeagueService {
         this._updateStats(teams, match);
       }
     }
-
-    return Object.keys(teams).map(key => teams[key]);
+    const teamList: ITeamStats[] = Object.keys(teams).map(
+      (team) => teams[team]
+    );
+    return this._sortLeaderBoard(teamList);
   }
 
   /**
@@ -138,6 +140,26 @@ export class LeagueService {
       teams[homeTeam].points += 1;
       teams[awayTeam].points += 1;
     }
+  }
+
+  /**
+   * Sorts the leaderboard based on points, goal difference, goals for, and team name
+   *
+   * @param teams - Array of team
+   * @returns Sorted array of team ascending
+   */
+  private _sortLeaderBoard(teams: ITeamStats[]): ITeamStats[] {
+    return teams.sort((a, b) => {
+      if (b.points !== a.points) return b.points - a.points;
+
+      const aGD = a.goalsFor - a.goalsAgainst;
+      const bGD = b.goalsFor - b.goalsAgainst;
+      if (bGD !== aGD) return bGD - aGD;
+
+      if (b.goalsFor !== a.goalsFor) return b.goalsFor - a.goalsFor;
+
+      return a.teamName.localeCompare(b.teamName);
+    });
   }
 
   /**
