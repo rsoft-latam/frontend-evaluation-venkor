@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LeaderboardComponent } from './leaderboard.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgTableComponent } from 'src/app/shared/ng-table/ng-table.component';
 import { LeagueService } from 'src/app/services/league.service';
-import { LEADERBOARD_COLUMN_DEFS } from './column-defs';
 import { ITeamStats } from 'src/app/shared/models/league.model';
+import { LeaderboardComponent } from 'src/app/pages/leaderboard/leaderboard.component';
+import { LEADERBOARD_COLUMN_DEFS } from 'src/app/pages/leaderboard/column-defs';
 
 describe('LeaderboardComponent', () => {
   let component: LeaderboardComponent;

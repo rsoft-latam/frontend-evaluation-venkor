@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AppInfoService } from './app-info.service';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { environment } from 'src/environments/environment';
+import { AppInfoService } from 'src/app/services/app-info.service';
 
 describe('AppInfoService', () => {
   let service: AppInfoService;

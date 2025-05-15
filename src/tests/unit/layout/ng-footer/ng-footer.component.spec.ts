@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgFooterComponent } from './ng-footer.component';
 import { AppInfoService } from 'src/app/services/app-info.service';
 import { of } from 'rxjs';
+import { NgFooterComponent } from 'src/app/layout/ng-footer/ng-footer.component';
 
 describe('NgFooterComponent', () => {
   let component: NgFooterComponent;

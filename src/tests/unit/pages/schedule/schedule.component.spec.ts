@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScheduleComponent } from './schedule.component';
 import { LeagueService } from 'src/app/services/league.service';
-import { SCHEDULE_COLUMN_DEFS } from './column-defs';
 import { IMatch } from 'src/app/shared/models/league.model';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgTableComponent } from 'src/app/shared/ng-table/ng-table.component';
+import { ScheduleComponent } from 'src/app/pages/schedule/schedule.component';
+import { SCHEDULE_COLUMN_DEFS } from 'src/app/pages/schedule/column-defs';
 
 describe('ScheduleComponent', () => {
   let component: ScheduleComponent;

@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { NgHeaderComponent } from './ng-header.component';
+import { NgHeaderComponent } from 'src/app/layout/ng-header/ng-header.component';
 
 describe('NgHeaderComponent', () => {
   let component: NgHeaderComponent;
@@ -8,9 +7,8 @@ describe('NgHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgHeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [NgHeaderComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
