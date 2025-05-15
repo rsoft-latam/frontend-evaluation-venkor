@@ -24,7 +24,6 @@ export class ScheduleComponent implements OnInit {
   constructor(private _leagueService: LeagueService) {}
 
   async ngOnInit(): Promise<void> {
-    await this._leagueService.fetchData();
     this.matches = this._leagueService.getMatches();
   }
 }

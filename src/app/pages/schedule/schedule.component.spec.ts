@@ -16,6 +16,7 @@ describe('ScheduleComponent', () => {
     mockLeagueService = {
       fetchData: jest.fn(),
       getMatches: jest.fn(),
+      getLeaderBoard: jest.fn(),
     } as unknown as jest.Mocked<LeagueService>;
 
     await TestBed.configureTestingModule({
@@ -57,7 +58,6 @@ describe('ScheduleComponent', () => {
 
     await component.ngOnInit();
 
-    expect(mockLeagueService.fetchData).toHaveBeenCalled();
     expect(mockLeagueService.getMatches).toHaveBeenCalled();
     expect(component.matches).toBe(mockMatches);
   });
