@@ -16,9 +16,16 @@ import { LeaderboardComponent } from './pages/leaderboard/leaderboard.component'
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { LeagueService } from './services/league.service';
 
-export function initApp(authService: AuthService): () => Promise<void> {
-  return () => authService.loadToken();
+export function initApp(
+  authService: AuthService,
+  leagueService: LeagueService
+): () => Promise<void> {
+  return async () => {
+    await authService.loadToken();
+    await leagueService.fetchData();
+  };
 }
 
 @NgModule({
@@ -34,7 +41,7 @@ export function initApp(authService: AuthService): () => Promise<void> {
     {
       provide: APP_INITIALIZER,
       useFactory: initApp,
-      deps: [AuthService],
+      deps: [AuthService, LeagueService],
       multi: true,
     },
     {

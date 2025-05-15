@@ -1,1 +1,24 @@
-<p>leaderboard works!</p>
+<div class="container mx-auto px-4 py-6">
+    <h2 class="text-2xl font-semibold mb-4 text-center">League Standings</h2>
+
+    <table class="min-w-full bg-white border border-gray-300 shadow-md rounded-md overflow-hidden">
+        <thead class="bg-blue-600 text-white">
+            <tr>
+                <th class="px-4 py-2 text-left">Team Name</th>
+                <th class="px-4 py-2 text-center">MP</th>
+                <th class="px-4 py-2 text-center">GF</th>
+                <th class="px-4 py-2 text-center">GA</th>
+                <th class="px-4 py-2 text-center">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let team of leaderboard" class="border-b hover:bg-gray-50">
+                <td class="px-4 py-2">{{ team.teamName }}</td>
+                <td class="px-4 py-2 text-center">{{ team.matchesPlayed }}</td>
+                <td class="px-4 py-2 text-center">{{ team.goalsFor }}</td>
+                <td class="px-4 py-2 text-center">{{ team.goalsAgainst }}</td>
+                <td class="px-4 py-2 text-center font-bold">{{ team.points }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
