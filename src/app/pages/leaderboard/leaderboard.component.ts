@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITeamStats } from 'src/app/models/league.model';
 import { LeagueService } from 'src/app/services/league.service';
+import { LEADERBOARD_COLUMN_DEFS } from './column-defs';
 
 @Component({
   selector: 'app-leaderboard',
@@ -9,6 +10,7 @@ import { LeagueService } from 'src/app/services/league.service';
 })
 export class LeaderboardComponent implements OnInit {
   leaderboard: ITeamStats[] = [];
+  public columnDefs = LEADERBOARD_COLUMN_DEFS;
 
   constructor(private _leagueService: LeagueService) {}
 
