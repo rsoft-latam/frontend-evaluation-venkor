@@ -6,9 +6,8 @@ import { LEADERBOARD_COLUMN_DEFS } from './column-defs';
 @Component({
   selector: 'app-leaderboard',
   template: `
-    <div class="container mx-auto px-4 py-6">
-      <h2 class="text-heading text-heading font-semibold mb-4 text-center">League Standings</h2>
-
+    <div class="container mx-auto">
+      <h2 class="text-heading text-heading font-semibold text-center mt-[60px] mb-[20px]">League Standings</h2>
       <ng-table [rowData]="leaderboard" [columnDefs]="columnDefs"></ng-table>
     </div>
   `,
