@@ -6,7 +6,7 @@ export const LEADERBOARD_COLUMN_DEFS: IColumnDefs[] = [
     headerName: 'Team Name',
     field: 'teamName',
     type: 'flagImage',
-    customClasses: 'flex-row-reverse',
+    customClasses: 'flex-row-reverse font-bold',
   },
   {
     headerName: 'MP',
@@ -27,16 +27,17 @@ export const LEADERBOARD_COLUMN_DEFS: IColumnDefs[] = [
   },
   {
     headerName: 'GD',
-    field: 'goalsAgainst',
+    field: null,
     type: 'text',
     getValue: (row: ITeamStats) => {
       return String(row.goalsFor - row.goalsAgainst);
     },
-    responsiveClasses: 'block md:hidden',
+    responsiveClasses: 'text-center block md:hidden',
   },
   {
     headerName: 'Points',
     field: 'points',
     type: 'text',
+    customClasses: 'text-blue-600 font-bold',
   },
 ];

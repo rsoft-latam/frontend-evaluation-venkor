@@ -19,22 +19,23 @@ export const SCHEDULE_COLUMN_DEFS: IColumnDefs[] = [
     field: 'homeTeam',
     type: 'flagImage',
     customHeadClasses: 'text-right',
+    customClasses: 'font-bold',
   },
   {
     headerName: '',
-    field: 'homeTeam',
+    field: null,
     type: 'text',
     getValue: (row: IMatch) => {
       return row.matchPlayed
         ? row.homeTeamScore + ' : ' + row.awayTeamScore
         : '- : -';
     },
-    customClasses: 'text-center',
+    customClasses: 'text-center font-bold',
   },
   {
     headerName: 'Away Team',
     field: 'awayTeam',
     type: 'flagImage',
-    customClasses: 'flex-row-reverse',
+    customClasses: 'flex-row-reverse font-bold',
   },
 ];
