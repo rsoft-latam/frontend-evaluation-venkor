@@ -18,6 +18,8 @@ import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { LeagueService } from './services/league.service';
 import { NgTableComponent } from './shared/ng-table/ng-table.component';
+import { NgFooterComponent } from './layout/ng-footer/ng-footer.component';
+import { NgHeaderComponent } from './layout/ng-header/ng-header.component';
 
 export function initApp(
   authService: AuthService,
@@ -36,6 +38,8 @@ export function initApp(
     LeaderboardComponent,
     NotFoundComponent,
     NgTableComponent,
+    NgFooterComponent,
+    NgHeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, RouterModule, HttpClientModule],
   exports: [],

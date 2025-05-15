@@ -1,0 +1,16 @@
+<header class="bg-blue-600 text-white flex items-center justify-between h-[60px] px-[40px] shadow">
+        <div class="flex items-center">
+            <img src="assets/images/logo.svg" alt="League Web UI" class="w-[110px] h-auto" />
+        </div>
+
+        <nav class="flex items-center space-x-[40px] text-sm">
+            <a [routerLink]="'schedule'" class="flex items-center space-x-1 hover:underline">
+                <img src="assets/images/schedule.png" alt="Schedule" class="h-[25px] w-[25px]" />
+                <span>Schedule</span>
+            </a>
+            <a [routerLink]="'leaderboard'" class="flex items-center space-x-1 hover:underline">
+                <img src="assets/images/leaderboard.png" alt="Leaderboard" class="h-[25px] w-[25px]" />
+                <span>Leaderboard</span>
+            </a>
+        </nav>
+    </header>
