@@ -20,5 +20,9 @@ module.exports = {
       isolatedModules: false,
     },
   },
+  moduleNameMapper: {
+    '^src/(.*)$': '<rootDir>/src/$1',
+    '^app/(.*)$': '<rootDir>/src/app/$1'
+  },
   testTimeout: 5000
 }
