@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IMatch } from 'src/app/models/match.model';
+import { LeagueService } from 'src/app/services/league.service';
 
 @Component({
   selector: 'app-schedule',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScheduleComponent implements OnInit {
 
-  constructor() { }
+  public matches: IMatch[] = [];  
 
-  ngOnInit(): void {
+  constructor(private _leagueService: LeagueService) { }
+
+  async ngOnInit(): Promise<void> {
+    await this._leagueService.fetchData();
+    this.matches = this._leagueService.getMatches();
   }
 
 }

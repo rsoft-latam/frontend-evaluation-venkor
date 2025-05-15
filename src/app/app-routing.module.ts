@@ -5,8 +5,14 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { LeaderboardComponent } from './pages/leaderboard/leaderboard.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/schedule', pathMatch: 'full' },
+  { path: 'schedule', component: ScheduleComponent },
+  { path: 'leaderboard', component: LeaderboardComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
