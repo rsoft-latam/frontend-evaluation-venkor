@@ -16,6 +16,7 @@ export const SCHEDULE_COLUMN_DEFS: IColumnDefs[] = [
     headerName: 'Home Team',
     field: 'homeTeam',
     type: 'flagImage',
+    customHeadClasses: 'text-right',
   },
   {
     headerName: '',
@@ -26,6 +27,7 @@ export const SCHEDULE_COLUMN_DEFS: IColumnDefs[] = [
         ? row.homeTeamScore + ' : ' + row.awayTeamScore
         : '- : -';
     },
+    customClasses: 'text-center',
   },
   {
     headerName: 'Away Team',
