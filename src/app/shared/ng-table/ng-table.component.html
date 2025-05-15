@@ -16,7 +16,7 @@
                 <div *ngIf="column.type === 'flagImage'" class="w-full flex justify-center items-center">
                     <span class="flex flex-row">
                         <span>{{row[column.field]}}</span>
-                        <img src="https://flagsapi.codeaid.io/Brazil.png" alt="" width="50" class="ml-2">
+                        <img [src]="getFlagImage(row[column.field])" alt="" width="50" class="ml-2">
                     </span>
                 </div>
             </td>
