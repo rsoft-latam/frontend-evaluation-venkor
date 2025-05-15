@@ -1,23 +1,29 @@
-<table class="min-w-full bg-white border border-gray-300 shadow-md rounded-md overflow-hidden">
-    <thead class="bg-blue-600 text-white">
-        <tr>
-            <th *ngFor="let column of columnDefs" class="px-4 py-2 text-left">{{column.headerName}}</th>
+<table class="w-[90%] mx-auto bg-white border border-[#E4EDF2] shadow-md rounded-md overflow-hidden text-[#4B5C68]">
+    <thead class="bg-[#E4EDF2] text-[#4B5C68] text-xs">
+        <tr class="h-[40px]">
+            <th *ngFor="let column of columnDefs" class="px-4 py-2 text-left font-normal">
+                {{ column.headerName }}
+            </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let row of rowData" class="border-b hover:bg-gray-50">
-            <td *ngFor="let column of columnDefs">
-                <div *ngIf="column.type === 'text'">
-                    {{row[column.field]}}
+        <tr *ngFor="let row of rowData; let i = index" [ngClass]="i % 2 === 0 ? 'bg-[#F6F7F7]' : ''"
+            class="h-[70px] border-b border-[#E4EDF2]">
+            <td *ngFor="let column of columnDefs" class="px-4 py-2 align-middle">
+                <div *ngIf="!column.getValue && column.type === 'text'" [ngClass]="column?.customClasses">
+                    {{ row[column.field] }}
                 </div>
-                <div *ngIf="column.type === 'dateTime'">
-                    {{row[column.field] | date: 'dd.MM.yyyy HH:mm'}}
+                <div *ngIf="column.getValue" [ngClass]="column?.customClasses">
+                    {{ column.getValue(row) }}
                 </div>
-                <div *ngIf="column.type === 'flagImage'" class="w-full flex justify-center items-center">
-                    <span class="flex flex-row">
-                        <span>{{row[column.field]}}</span>
-                        <img [src]="getFlagImage(row[column.field])" alt="" width="50" class="ml-2">
-                    </span>
+                <div *ngIf="column.type === 'dateTime'" [ngClass]="column?.customClasses">
+                    {{ row[column.field] | date : "d.M.yyyy HH:mm" }}
+                </div>
+                <div *ngIf="column.type === 'flagImage'" [ngClass]="column?.customClasses"
+                    class="flex justify-end items-center gap-2 whitespace-nowrap">
+                    <span class="block">{{ row[column.field] }}</span>
+                    <img [src]="getFlagImage(row[column.field])" alt="{{ row[column.field] }}"
+                        class="h-[24px] w-[36px] object-contain" />
                 </div>
             </td>
         </tr>
