@@ -1,4 +1,4 @@
-import { IMatch } from 'src/app/models/league.model';
+import { IMatch } from 'src/app/shared/models/league.model';
 import { IColumnDefs } from 'src/app/shared/ng-table/ng-table.model';
 
 export const SCHEDULE_COLUMN_DEFS: IColumnDefs[] = [

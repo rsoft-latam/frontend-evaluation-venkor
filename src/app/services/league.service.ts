@@ -10,7 +10,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { IMatch, ITeamStats } from '../models/league.model';
+import { IMatch, ITeamStats } from '../shared/models/league.model';
 
 @Injectable({
   providedIn: 'root',

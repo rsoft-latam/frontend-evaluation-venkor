@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'ng-table',
   templateUrl: './ng-table.component.html',
-  styleUrls: ['./ng-table.component.scss'],
 })
 export class NgTableComponent implements OnInit {
   @Input() rowData: any[];
