@@ -1,1 +1,18 @@
+<header class="bg-blue-600 text-white flex items-center justify-between px-8 py-4 shadow h-[60px]">
+    <div class="flex items-center space-x-3">
+        <img src="assets/images/logo.svg" alt="League Web UI" class="w-[110px] h-8 w-auto" />
+    </div>
+
+    <nav class="flex items-center space-x-6 text-sm">
+        <a [routerLink]="'schedule'" class="flex items-center space-x-1 hover:underline">
+            <img src="assets/images/schedule.png" alt="Schedule" class="h-4 w-4" />
+            <span>Schedule</span>
+        </a>
+        <a [routerLink]="'leaderboard'" class="flex items-center space-x-1 hover:underline">
+            <img src="assets/images/leaderboard.png" alt="Leaderboard" class="h-4 w-4" />
+            <span>Leaderboard</span>
+        </a>
+    </nav>
+</header>
+
 <router-outlet></router-outlet>
