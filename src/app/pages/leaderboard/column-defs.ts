@@ -5,6 +5,7 @@ export const LEADERBOARD_COLUMN_DEFS: IColumnDefs[] = [
     headerName: 'Team Name',
     field: 'teamName',
     type: 'flagImage',
+    customClasses: 'flex-row-reverse',
   },
   {
     headerName: 'MP',
