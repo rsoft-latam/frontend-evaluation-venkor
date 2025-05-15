@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IMatch } from 'src/app/models/match.model';
+import { IMatch } from 'src/app/models/league.model';
 import { LeagueService } from 'src/app/services/league.service';
 
 @Component({
