@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 export class NgTableComponent implements OnInit {
   @Input() rowData: any[];
   @Input() columnDefs: IColumnDefs[] = [];
+  @Input() showStripedRows: boolean = false;
 
   private _flagApiUrl = environment.flagApiUrl;
 

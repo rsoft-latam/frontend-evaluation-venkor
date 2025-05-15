@@ -7,8 +7,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let row of rowData; let i = index" [ngClass]="i % 2 === 0 ? 'bg-[#F6F7F7]' : ''"
-            class="h-[70px] border-b border-[#E4EDF2]">
+        <tr *ngFor="let row of rowData; let i = index" [ngClass]="{
+            'bg-[#F6F7F7]': showStripedRows && i % 2 === 0
+        }" class="h-[70px] border-b border-[#E4EDF2]">
             <td *ngFor="let column of columnDefs" class="px-4 py-2 align-middle">
                 <div *ngIf="!column.getValue && column.type === 'text'" [ngClass]="column?.customClasses">
                     {{ row[column.field] }}
