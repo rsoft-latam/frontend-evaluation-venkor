@@ -2,7 +2,7 @@
     <thead class="bg-[#E4EDF2] text-[#4B5C68] text-xs">
         <tr class="h-[40px]">
             <th *ngFor="let column of columnDefs" class="px-4 py-2 text-left text-tableHeader font-normal"
-                [ngClass]="column?.customHeadClasses">
+                [ngClass]="[column?.customHeadClasses ?? '', column?.responsiveClasses ?? '']">
                 {{ column.headerName }}
             </th>
         </tr>
@@ -11,23 +11,23 @@
         <tr *ngFor="let row of rowData; let i = index" [ngClass]="{
             'bg-[#F6F7F7]': showStripedRows && i % 2 === 0
         }" class="h-[70px] border-b border-[#E4EDF2]">
-            <td *ngFor="let column of columnDefs" class="px-4 py-2 align-middle">
-                <div *ngIf="!column.getValue && column.type === 'text'" [ngClass]="column?.customClasses">
+            <td *ngFor="let column of columnDefs" class="px-4 py-2 align-middle" [ngClass]="column?.responsiveClasses">
+                <span *ngIf="!column.getValue && column.type === 'text'" [ngClass]="column?.customClasses">
                     {{ row[column.field] }}
-                </div>
-                <div *ngIf="column.getValue" [ngClass]="column?.customClasses">
+                </span>
+                <span *ngIf="column.getValue" [ngClass]="column?.customClasses">
                     {{ column.getValue(row) }}
-                </div>
-                <div *ngIf="column.type === 'dateTime'" [ngClass]="column?.customClasses">
+                </span>
+                <span *ngIf="column.type === 'dateTime'" [ngClass]="column?.customClasses">
                     {{ row[column.field] | date: 'd.M.yyyy' }}<br />
                     {{ row[column.field] | date: 'HH:mm' }}
-                </div>
-                <div *ngIf="column.type === 'flagImage'" [ngClass]="column?.customClasses"
+                </span>
+                <span *ngIf="column.type === 'flagImage'" [ngClass]="column?.customClasses"
                     class="flex justify-end items-center gap-2 whitespace-nowrap">
                     <span class="block">{{ row[column.field] }}</span>
                     <img [src]="getFlagImage(row[column.field])" alt="{{ row[column.field] }}"
-                        class="h-[37px] w-[53px] object-contain"/>
-                </div>
+                        class="h-[37px] w-[53px] object-contain" />
+                </span>
             </td>
         </tr>
     </tbody>

@@ -6,11 +6,13 @@ export const SCHEDULE_COLUMN_DEFS: IColumnDefs[] = [
     headerName: 'Date/Time',
     field: 'matchDate',
     type: 'dateTime',
+    responsiveClasses: 'hidden md:table-cell',
   },
   {
     headerName: 'Stadium',
     field: 'stadium',
     type: 'text',
+    responsiveClasses: 'hidden lg:table-cell',
   },
   {
     headerName: 'Home Team',
