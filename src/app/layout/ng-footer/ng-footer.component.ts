@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AppInfoService } from 'src/app/services/app-info.service';
 
 @Component({
@@ -13,16 +14,23 @@ import { AppInfoService } from 'src/app/services/app-info.service';
     </footer>
   `,
 })
-export class NgFooterComponent implements OnInit {
+export class NgFooterComponent implements OnInit, OnDestroy {
   public apiVersion: string = '';
+  private _subs: Subscription = new Subscription();
 
   constructor(private _appInfoService: AppInfoService) {}
 
   ngOnInit(): void {
-    this._appInfoService.getApiVersion().subscribe((res) => {
-      if (res.success) {
-        this.apiVersion = res.version;
-      }
-    });
+    this._subs.add(
+      this._appInfoService.getApiVersion().subscribe((res) => {
+        if (res.success) {
+          this.apiVersion = res.version;
+        }
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this._subs.unsubscribe();
   }
 }
