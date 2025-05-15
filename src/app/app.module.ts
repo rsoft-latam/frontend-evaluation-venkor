@@ -17,6 +17,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { LeagueService } from './services/league.service';
+import { NgTableComponent } from './shared/ng-table/ng-table.component';
 
 export function initApp(
   authService: AuthService,
@@ -34,6 +35,7 @@ export function initApp(
     ScheduleComponent,
     LeaderboardComponent,
     NotFoundComponent,
+    NgTableComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, RouterModule, HttpClientModule],
   exports: [],

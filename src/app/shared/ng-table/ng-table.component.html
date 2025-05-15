@@ -1,0 +1,25 @@
+<table class="min-w-full bg-white border border-gray-300 shadow-md rounded-md overflow-hidden">
+    <thead class="bg-blue-600 text-white">
+        <tr>
+            <th *ngFor="let column of columnDefs" class="px-4 py-2 text-left">{{column.headerName}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rowData" class="border-b hover:bg-gray-50">
+            <td *ngFor="let column of columnDefs">
+                <div *ngIf="column.type === 'text'">
+                    {{row[column.field]}}
+                </div>
+                <div *ngIf="column.type === 'dateTime'">
+                    {{row[column.field] | date: 'dd.MM.yyyy HH:mm'}}
+                </div>
+                <div *ngIf="column.type === 'flagImage'" class="w-full flex justify-center items-center">
+                    <span class="flex flex-row">
+                        <span>{{row[column.field]}}</span>
+                        <img src="https://flagsapi.codeaid.io/Brazil.png" alt="" width="50" class="ml-2">
+                    </span>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
