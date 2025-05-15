@@ -18,7 +18,8 @@
                     {{ column.getValue(row) }}
                 </div>
                 <div *ngIf="column.type === 'dateTime'" [ngClass]="column?.customClasses">
-                    {{ row[column.field] | date : "d.M.yyyy HH:mm" }}
+                    {{ row[column.field] | date: 'd.M.yyyy' }}<br />
+                    {{ row[column.field] | date: 'HH:mm' }}
                 </div>
                 <div *ngIf="column.type === 'flagImage'" [ngClass]="column?.customClasses"
                     class="flex justify-end items-center gap-2 whitespace-nowrap">
