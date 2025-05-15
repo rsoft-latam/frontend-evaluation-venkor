@@ -1,7 +1,7 @@
 <table class="w-[90%] mx-auto bg-white border border-[#E4EDF2] shadow-md rounded-md overflow-hidden text-[#4B5C68]">
     <thead class="bg-[#E4EDF2] text-[#4B5C68] text-xs">
         <tr class="h-[40px]">
-            <th *ngFor="let column of columnDefs" class="px-4 py-2 text-left font-normal"
+            <th *ngFor="let column of columnDefs" class="px-4 py-2 text-left text-tableHeader font-normal"
                 [ngClass]="column?.customHeadClasses">
                 {{ column.headerName }}
             </th>

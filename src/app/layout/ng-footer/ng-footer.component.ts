@@ -5,7 +5,7 @@ import { AppInfoService } from 'src/app/services/app-info.service';
   selector: 'ng-footer',
   template: `
     <footer
-      class="bg-[#F6F7F7] h-[40px] w-full flex items-center justify-end pr-[40px] border-t border-[#E4EDF2]"
+      class="bg-footerBg h-[40px] w-full flex items-center justify-end pr-[40px] border-t border-[#E4EDF2]"
     >
       <span class="text-[#4B5C68] text-xs font-semibold"
         >API Version: {{ apiVersion }}</span

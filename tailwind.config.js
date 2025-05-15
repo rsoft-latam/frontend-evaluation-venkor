@@ -17,6 +17,7 @@ module.exports = {
       },
       colors: {
         menu: '#FFFFFF',
+        headerBg: '#025FEB',
         heading: '#182C62',
         tableText: '#4B5C68',
         footerText: '#4B5C68',
